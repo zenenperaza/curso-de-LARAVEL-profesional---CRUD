@@ -8,7 +8,11 @@ use Illuminate\Http\Request;
 class NoteController extends Controller
 {
     public function index(){
-        $note = Note::all();
-        return view('note.index', compact('note'));
+        $notes = Note::all();
+        return view('note.index', compact('notes'));
+    }
+
+    public function create(){
+        return view('note.create');
     }
 }
