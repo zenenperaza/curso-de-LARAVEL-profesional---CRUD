@@ -6,9 +6,10 @@
             <li>
                 <a href="{{ route('note.show', $note->id)}}">{{ $note->title  }} </a> 
                 <a href="{{ route('note.edit', $note->id) }}">EDIT</a> | 
-                <form  action="">
+                <form method="POST" action="{{ ROUTE('note.destroy', $note->id)}}">
                     @csrf
                     @method('DELETE')
+                    <input type="submit" value="DELETE">
                      
                 </form></li>
         @empty
